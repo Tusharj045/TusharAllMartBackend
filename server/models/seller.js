@@ -13,7 +13,7 @@ let Seller = mongoose.model('Seller', {
         type: Number,
     },
     reviews:{
-        type:Array,
+        type:String,
     },
     contact: {
         type: Array,

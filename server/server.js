@@ -51,8 +51,8 @@ app.post('/products', (req, res) => {
         name: req.body.name,
         type: req.body.type,
         price: req.body.price,
-        quantity: req.body.quantity,
-        reviews: req.body.reviews
+        reviews: req.body.reviews,
+        seller:req.body.seller
     })
 
     product.save().then((doc) => {
@@ -98,7 +98,8 @@ app.post('/orders', (req, res) => {
         cust_name: req.body.cust_name,
         ship_date: req.body.ship_date,
         price: req.body.price,
-        quantity: req.body.quantity
+        quantity: req.body.quantity,
+        products:req.body.products
     })
 
     order.save().then((doc) => {

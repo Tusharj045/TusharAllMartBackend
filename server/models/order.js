@@ -15,6 +15,9 @@ let Order = mongoose.model('Order', {
     },
     ship_date: {
         type: Date
+    },
+    products:{
+        type:Array
     }
 })
 
