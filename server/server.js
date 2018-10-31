@@ -120,7 +120,7 @@ app.post('/customers', (req, res) => {
 app.post('/orders', (req, res) => {
     let order = new Order({
         cust_name: req.body.cust_name,
-        ship_date: req.body.ship_date,
+        ship_address: req.body.ship_address,
         price: req.body.price,
         quantity: req.body.quantity,
         products:req.body.products

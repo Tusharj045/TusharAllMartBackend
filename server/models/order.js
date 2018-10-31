@@ -13,8 +13,8 @@ let Order = mongoose.model('Order', {
         type: Number,
         required: true
     },
-    ship_date: {
-        type: Date
+    ship_address: {
+        type: String
     },
     products:{
         type:Array
