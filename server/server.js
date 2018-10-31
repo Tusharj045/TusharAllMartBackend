@@ -133,4 +133,11 @@ app.post('/orders', (req, res) => {
     })
 })
 
+app.delete('/products/:name',(req,res)=>{
+    let name=req.params.name
+    Product.findOneAndRemove({name}).then((doc)=>{
+        console.log(doc)
+    })
+})
+
 app.listen(port)
