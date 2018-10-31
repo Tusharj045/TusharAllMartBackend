@@ -100,7 +100,7 @@ app.post('/sellers', (req, res) => {
     })
 })
 
-app.post('/customer', (req, res) => {
+app.post('/customers', (req, res) => {
     let customer = new Customer({
         name: req.body.name,
         city: req.body.city,
