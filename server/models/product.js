@@ -5,6 +5,12 @@ let Product = mongoose.model('Product', {
         type: String,
         required: true
     },
+    brand:{
+        type:String
+    },
+    desc:{
+        type:String
+    },
     price: {
         type: Number,
         required:true
