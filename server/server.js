@@ -8,6 +8,7 @@ let { Customer } = require('./models/customer.js')
 let { Order } = require('./models/order.js')
 let { Product } = require('./models/product.js')
 let { Seller } = require('./models/seller.js')
+let { User } = require('./models/user.js')
 
 let app = express()
 let port = process.env.PORT || 3000
