@@ -46,10 +46,32 @@ app.get('/orders',(req,res)=>{
     })
 })
 
+app.get('/users',(req,res)=>{
+    User.find().then((users)=>{
+        res.send({users})
+    }).catch((err)=>{
+        res.status(400).send(err)
+    })
+})
+
+app.post('/users', (req, res) => {
+    let user= new User({
+        name:req.body.name,
+        username:req.body.username,
+        type:req.body.type,
+        password:req.body.password
+    })
+
+    user.save().then((doc)=>{
+        res.send(doc)
+    }).catch((err)=>{
+        res.status(400).send(err)
+    })
+})
+
 app.post('/products', (req, res) => {
     let product = new Product({
         name: req.body.name,
-        type: req.body.type,
         price: req.body.price,
         reviews: req.body.reviews,
         seller:req.body.seller
@@ -67,7 +89,6 @@ app.post('/sellers', (req, res) => {
         name: req.body.name,
         address: req.body.address,
         rating: req.body.rating,
-        reviews: req.body.reviews,
         contact: req.body.contact
     })
 

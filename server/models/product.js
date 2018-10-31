@@ -5,16 +5,13 @@ let Product = mongoose.model('Product', {
         type: String,
         required: true
     },
-    type:{
-        type:String,
-        required:true
-    },
     price: {
         type: Number,
         required:true
     },
     reviews: {
-        type: Array,
+        type: String,
+        default:'none'
     },
     seller:{
         type:String

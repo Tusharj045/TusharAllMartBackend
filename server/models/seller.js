@@ -11,9 +11,7 @@ let Seller = mongoose.model('Seller', {
     },
     rating: {
         type: Number,
-    },
-    reviews:{
-        type:String,
+        default: 0
     },
     contact: {
         type: Array,
