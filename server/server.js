@@ -73,6 +73,8 @@ app.post('/users', (req, res) => {
 app.post('/products', (req, res) => {
     let product = new Product({
         name: req.body.name,
+        brand: req.body.brand,
+        desc: req.body.desc,
         price: req.body.price,
         reviews: req.body.reviews,
         seller:req.body.seller
