@@ -9,6 +9,7 @@ let { Order } = require('./models/order.js')
 let { Product } = require('./models/product.js')
 let { Seller } = require('./models/seller.js')
 let { User } = require('./models/user.js')
+let { Feedback } = require('./models/feedback.js')
 
 let app = express()
 let port = process.env.PORT || 3000
@@ -128,6 +129,20 @@ app.post('/orders', (req, res) => {
     })
 
     order.save().then((doc) => {
+        res.send(doc)
+    }).catch((err) => {
+        res.status(400).send(err)
+    })
+})
+
+app.post('/feedback',(req,res) => { 
+    let feedback = new Feedback({
+        product_name: req.body.product_name,
+        review: req.body.review,
+        rating: req.body.rating
+    })
+
+    feedback.save().then((doc) => {
         res.send(doc)
     }).catch((err) => {
         res.status(400).send(err)
