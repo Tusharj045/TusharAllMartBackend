@@ -9,10 +9,6 @@ let Seller = mongoose.model('Seller', {
         type: String,
         required: true
     },
-    rating: {
-        type: Number,
-        default: 0
-    },
     contact: {
         type: Array,
         required: true
