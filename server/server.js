@@ -76,7 +76,8 @@ app.post('/products', (req, res) => {
         brand: req.body.brand,
         desc: req.body.desc,
         price: req.body.price,
-        reviews: req.body.reviews,
+        rating: req.body.rating,
+        review: req.body.review,
         seller:req.body.seller
     })
 
@@ -138,6 +139,20 @@ app.delete('/products/:name',(req,res)=>{
     Product.findOneAndRemove({name}).then((doc)=>{
         console.log(doc)
     })
+})
+
+app.patch('/products/:name',(req,res)=>{
+    let name=req.params.name
+
+    Product.findOneAndUpdate(
+        { name },
+        {
+            $set: req.body,
+        },
+        {
+            new: true
+        }
+    )
 })
 
 app.listen(port)

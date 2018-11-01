@@ -15,9 +15,11 @@ let Product = mongoose.model('Product', {
         type: Number,
         required:true
     },
-    reviews: {
-        type: String,
-        default:'none'
+    review: {
+        type: String
+    },
+    rating: {
+        type:Number
     },
     seller:{
         type:String
