@@ -48,6 +48,14 @@ app.get('/orders',(req,res)=>{
     })
 })
 
+app.get('/feedback',(req,res)=>{
+    Feedback.find().then((feedbacks)=>{
+        res.send({feedbacks})
+    }).catch((err)=>{
+        res.status(400).send(err)
+    })
+})
+
 app.get('/users',(req,res)=>{
     User.find().then((users)=>{
         res.send({users})
